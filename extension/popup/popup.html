@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PhishGuard</h1>
+            <div id="status-badge" class="badge safe">SAFE</div>
+        </header>
+
+        <main>
+            <div class="scan-info">
+                <p><strong>URL:</strong> <span id="current-url">Loading...</span></p>
+                <p><strong>Score:</strong> <span id="security-score">--</span>/100</p>
+            </div>
+
+            <div class="reasons-container">
+                <h3>Detection Analysis</h3>
+                <ul id="reasons-list">
+                    <li>No active scan results.</li>
+                </ul>
+            </div>
+
+            <div class="actions">
+                <button id="btn-scan" class="primary-btn">Scan Now</button>
+                <button id="btn-export" class="secondary-btn">Export Reports (JSON)</button>
+                <button id="btn-dashboard" class="secondary-btn">Open Dashboard</button>
+            </div>
+        </main>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,16 +1,17 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import express from "express";
+import path from "path";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
+  // Serve the 'website' directory as static files on the root path
+  // This allows accessing the PhishGuard Hub directly
+  app.use(express.static(path.join(process.cwd(), "website")));
 
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
-
+  // API routes can go here if needed, but per requirements, this is a static project.
+  
   return httpServer;
 }
