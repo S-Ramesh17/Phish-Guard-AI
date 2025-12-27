@@ -1,0 +1,175 @@
+You are an expert Full-Stack Security Engineer AI.
+
+Your task is to generate a COMPLETE, SUBMISSION-READY
+ANTI-PHISHING SYSTEM consisting of:
+
+1) A browser extension (PhishGuard)
+2) A supporting web platform (PhishGuard Hub)
+
+The project must work fully within FREE TIER limits and be suitable
+for ACADEMIC PROJECT SUBMISSION and DEMO.
+
+=====================================================
+PROJECT OBJECTIVE
+=====================================================
+Build a phishing detection and awareness system that:
+• Detects suspicious websites
+• Explains WHY a page is suspicious
+• Allows manual & automatic scanning
+• Stores phishing reports locally
+• Displays reports in a web dashboard
+• Provides prevention tips and awareness
+
+=====================================================
+TECHNOLOGY CONSTRAINTS (MANDATORY)
+=====================================================
+• HTML5, CSS3, Vanilla JavaScript ONLY
+• Browser Extension (Manifest V3)
+• Cross-browser compatible (Chrome, Edge, Brave, Firefox)
+• No paid APIs
+• WHOIS and PhishTank logic must be SIMULATED (placeholders)
+• No backend server
+• No ML models
+• Everything must work offline
+
+=====================================================
+PART 1: PHISHGUARD EXTENSION
+=====================================================
+
+STRUCTURE:
+extension/
+├── manifest.json
+├── popup/
+│ ├── popup.html
+│ ├── popup.css
+│ └── popup.js
+├── scripts/
+│ └── content/dom-scanner.js
+└── utils/
+    ├── domain.js
+    ├── whois.js
+    └── phishtank.js
+
+MANDATORY FEATURES:
+
+1. AUTO SCAN
+• Scan every webpage automatically on load
+
+2. MANUAL SCAN
+• "Scan Now" button in popup
+• Re-scan active tab on demand
+
+3. DETECTION LOGIC
+• Password input detection
+• Non-HTTPS pages
+• New domain (WHOIS < 30 days – simulated)
+• PhishTank listing (simulated dataset)
+
+4. DETECTION EXPLANATION
+• Each scan must store:
+  - URL
+  - score
+  - detected (true/false)
+  - list of reasons
+  - timestamp
+
+5. REPORT STORAGE
+• Store reports in chrome.storage.sync
+• Keep last 50 scans
+
+6. POPUP UI
+• Status: SAFE / SUSPICIOUS / PHISHING
+• List of detection reasons
+• Buttons:
+  - Scan Now
+  - Export Reports (JSON)
+  - Open Dashboard
+
+=====================================================
+PART 2: PHISHGUARD HUB WEBSITE
+=====================================================
+
+STRUCTURE:
+website/
+├── index.html
+├── dashboard.html
+├── learn.html
+├── css/
+│ └── styles.css
+└── js/
+    └── dashboard.js
+
+MANDATORY FEATURES:
+
+1. DASHBOARD
+• Import reports JSON exported from extension
+• Display reports in table:
+  - Date
+  - URL
+  - Status
+  - Reasons
+• Color-coded status:
+  - Green = Safe
+  - Yellow = Suspicious
+  - Red = Phishing
+
+2. STATISTICS
+• Simple bar or count visualization
+• No Chart.js or heavy libraries
+
+3. PDF EXPORT
+• Export displayed reports to PDF (jsPDF)
+
+4. PREVENTION & AWARENESS PAGE
+(learn.html)
+• Phishing prevention tips
+• Safe browsing practices
+• Safe DNS recommendation
+• 2FA awareness
+
+=====================================================
+UX & UI REQUIREMENTS
+=====================================================
+• Clean modern blue theme
+• Mobile responsive
+• Simple, readable layout
+• Clear headings and labels
+
+=====================================================
+DOCUMENTATION (MANDATORY)
+=====================================================
+Generate README.md including:
+• Project overview
+• Installation steps
+• How extension works
+• How dashboard works
+• Limitations
+• Future enhancements
+
+=====================================================
+ACADEMIC REQUIREMENTS
+=====================================================
+• Clear explanation of detection flow
+• Explicit limitations section
+• Future scope section
+• Architecture explanation (text diagram)
+
+=====================================================
+OUTPUT FORMAT
+=====================================================
+• Generate ALL source code
+• Code must be commented
+• Use placeholders where real APIs would be used
+• No pseudocode – REAL WORKING CODE
+• Organize exactly in the structure above
+
+DO NOT:
+❌ Use paid APIs
+❌ Add backend servers
+❌ Add ML models
+❌ Use frameworks
+
+The final result must be:
+✔ Fully working demo
+✔ Easy to explain in viva
+✔ Ready for project submission
