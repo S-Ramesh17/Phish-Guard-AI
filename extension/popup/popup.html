@@ -15,8 +15,11 @@
 
         <main>
             <div class="scan-info">
-                <p><strong>URL:</strong> <span id="current-url">Loading...</span></p>
-                <p><strong>Score:</strong> <span id="security-score">--</span>/100</p>
+                <p><strong>Domain:</strong> <span id="current-url">Loading...</span></p>
+                <div class="score-display">
+                    <strong>Risk Score:</strong> 
+                    <span id="security-score" class="score-value">--</span><span class="score-unit">/100</span>
+                </div>
             </div>
 
             <div class="reasons-container">
@@ -31,8 +34,18 @@
                 <button id="btn-export" class="secondary-btn">Export Reports (JSON)</button>
                 <button id="btn-dashboard" class="secondary-btn">Open Dashboard</button>
             </div>
+
+            <div class="disclaimer">
+                <small>Demo Mode: WHOIS and PhishTank checks are simulated.</small>
+            </div>
         </main>
     </div>
+
+    <!-- Load unified schemas and utils first -->
+    <script src="../schemas/report.js"></script>
+    <script src="../utils/browser-api.js"></script>
+    <script src="../utils/risk-scorer.js"></script>
+    <!-- Then load popup logic -->
     <script src="popup.js"></script>
 </body>
 </html>
